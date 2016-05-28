@@ -57,6 +57,13 @@ final class ReportIncidentUpdateCommand
     public $user;
 
     /**
+     * The component status to set
+     *
+     * @var int
+     */
+    public $component_status;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -72,17 +79,19 @@ final class ReportIncidentUpdateCommand
      * Create a new report incident update command instance.
      *
      * @param \CachetHQ\Cachet\Models\Incident $incident
-     * @param string                           $status
+     * @param int                              $status
+     * @param int                              $component_status
      * @param string                           $message
      * @param bool                             $notify
      * @param \CachetHQ\Cachet\Models\User     $user
      *
      * @return void
      */
-    public function __construct(Incident $incident, $status, $message, $notify, User $user)
+    public function __construct(Incident $incident, $status, $component_status, $message, $notify, User $user)
     {
         $this->incident = $incident;
         $this->status = $status;
+        $this->component_status = $component_status;
         $this->message = $message;
         $this->notify = $notify;
         $this->user = $user;

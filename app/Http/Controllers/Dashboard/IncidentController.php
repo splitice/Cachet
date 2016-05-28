@@ -323,7 +323,9 @@ class IncidentController extends Controller
             $incident = dispatch(new ReportIncidentUpdateCommand(
                 $incident,
                 Binput::get('status'),
+                Binput::get('component_status'),
                 Binput::get('message'),
+                Binput::get('notify'),
                 $this->auth->user()
             ));
         } catch (ValidationException $e) {

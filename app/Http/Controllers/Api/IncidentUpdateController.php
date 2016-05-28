@@ -77,6 +77,7 @@ class IncidentUpdateController extends AbstractApiController
             $update = dispatch(new ReportIncidentUpdateCommand(
                 $incident,
                 Binput::get('status'),
+                Binput::get('component_status'),
                 Binput::get('message'),
                 Binput::get('notify', true),
                 Auth::user()

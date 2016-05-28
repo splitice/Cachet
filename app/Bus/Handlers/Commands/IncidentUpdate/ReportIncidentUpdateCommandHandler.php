@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\IncidentUpdate;
 
 use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\ReportIncidentUpdateCommand;
 use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent;
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\IncidentUpdate;
 
 /**
@@ -40,6 +41,14 @@ class ReportIncidentUpdateCommandHandler
 
         // Create the incident update.
         $update = IncidentUpdate::create($data);
+
+
+        // Update the component.
+        if ($command->incident->component_id && $command->component_status !== null) {
+            Component::find($command->component_id)->update([
+                'status' => $command->component_status,
+            ]);
+        }
 
         $update->notify = (bool) $command->notify;
 
