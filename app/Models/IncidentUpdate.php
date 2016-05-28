@@ -51,7 +51,7 @@ class IncidentUpdate extends Model implements HasPresenter
      * @var string[]
      */
     public $rules = [
-        'incident_id' => 'int',
+        'incident_id' => 'required|int',
         'status'      => 'required|int',
         'message'     => 'required|string',
         'user_id'     => 'required|int',
