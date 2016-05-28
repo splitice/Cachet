@@ -93,7 +93,7 @@ class ReportIncidentCommandHandler
         $incident = Incident::create($data);
 
         // Update the component.
-        if ($command->component_id) {
+        if ($command->component_id && $command->component_status !== null) {
             Component::find($command->component_id)->update([
                 'status' => $command->component_status,
             ]);
