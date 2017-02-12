@@ -31,9 +31,10 @@ return [
         'email'         => 'Correo electrónico',
         'password'      => 'Contraseña',
         '2fauth'        => 'Código de Autenticación',
-        'invalid'       => 'Nombre de usuario o contraseña incorrectos',
+        'invalid'       => 'Nombre de usuario o contraseña incorrecto',
         'invalid-token' => 'Token inválido',
         'cookies'       => 'Usted debe habilitar cookies para logearse o iniciar sesion.',
+        'rate-limit'    => 'Límite de transferencia excedido.',
     ],
 
     // Incidents form fields
@@ -89,7 +90,7 @@ return [
         'type_avg'         => 'Promedio',
         'places'           => 'Cantidad de decimales',
         'default_view'     => 'Vista predeterminada',
-        'threshold'        => 'How many minutes of threshold between metric points?',
+        'threshold'        => '¿Cuántos minutos de umbral entre púntos de métrica?',
 
         'points' => [
             'value' => 'Valor',
@@ -108,7 +109,7 @@ return [
             'banner'                 => 'Imagen del banner',
             'banner-help'            => 'Se recomienda subir una imagen no más grande de 930px de ancho .',
             'subscribers'            => '¿Permitir a la gente inscribirse mediante noficiacion por correo electronico?',
-            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
+            'automatic_localization' => '¿Traducir automáticamente la página de estado según el lenguaje del visitante?',
         ],
         'analytics' => [
             'analytics_google'       => 'Código de Google Analytics',

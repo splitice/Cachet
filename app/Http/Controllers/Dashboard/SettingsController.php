@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
+use CachetHQ\Cachet\Integrations\Contracts\Credits;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Settings\Repository;
 use Exception;
@@ -80,6 +81,12 @@ class SettingsController extends Controller
                 'title'  => trans('dashboard.settings.analytics.analytics'),
                 'url'    => route('dashboard.settings.analytics'),
                 'icon'   => 'ion-stats-bars',
+                'active' => false,
+            ],
+            'credits' => [
+                'title'  => trans('dashboard.settings.credits.credits'),
+                'url'    => route('dashboard.settings.credits'),
+                'icon'   => 'ion-ios-list',
                 'active' => false,
             ],
             'about' => [
@@ -213,14 +220,36 @@ class SettingsController extends Controller
     }
 
     /**
+     * Show the credits view.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showCreditsView()
+    {
+        $this->subMenu['credits']['active'] = true;
+
+        $credits = app(Credits::class)->latest();
+
+        $backers = $credits['backers'];
+        $contributors = $credits['contributors'];
+
+        shuffle($backers);
+        shuffle($contributors);
+
+        return View::make('dashboard.settings.credits')
+            ->withPageTitle(trans('dashboard.settings.credits.credits').' - '.trans('dashboard.dashboard'))
+            ->withBackers($backers)
+            ->withContributors($contributors)
+            ->withSubMenu($this->subMenu);
+    }
+
+    /**
      * Updates the status page settings.
      *
      * @return \Illuminate\View\View
      */
     public function postSettings()
     {
-        $redirectUrl = Session::get('redirect_to', route('dashboard.settings.setup'));
-
         $setting = app(Repository::class);
 
         if (Binput::get('remove_banner') === '1') {
@@ -266,14 +295,14 @@ class SettingsController extends Controller
                 $setting->set($settingName, $settingValue);
             }
         } catch (Exception $e) {
-            return Redirect::to($redirectUrl)->withErrors(trans('dashboard.settings.edit.failure'));
+            return Redirect::back()->withErrors(trans('dashboard.settings.edit.failure'));
         }
 
         if (Binput::has('app_locale')) {
             Lang::setLocale(Binput::get('app_locale'));
         }
 
-        return Redirect::to($redirectUrl)->withSuccess(trans('dashboard.settings.edit.success'));
+        return Redirect::back()->withSuccess(trans('dashboard.settings.edit.success'));
     }
 
     /**

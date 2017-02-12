@@ -81,26 +81,21 @@ return [
             'failure'            => 'Something went wrong with the subscription.',
             'already-subscribed' => '无法订阅，因为这个邮箱地址 ( :email ) 已经在订阅列表中了。',
             'verify'             => [
-                'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
-                'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
-                'html'           => '<p>请确认您的 :app_name 电子邮件订阅。</p><p><a href=":link">:link</a></p><p>此致，:app_name</p>',
+                'text'   => "请确认您的 :app_name 状态更新邮件订阅。\n:link",
+                'html'   => '<p>请确认您的 :app_name 状态更新邮件订阅。</p>',
+                'button' => '确认订阅',
             ],
             'maintenance' => [
-                'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New maintenance has been scheduled on :app_name.',
-                'html'           => '<p>新的维护计划已被安排在 :app_name 上。</p><p>此致，:app_name</p>',
+                'subject' => '[计划维护] :name',
             ],
             'incident' => [
-                'text'           => "New incident has been reported on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New incident has been reported on :app_name.',
-                'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
+                'subject' => '[新事件] :status: :name',
             ],
             'component' => [
-                'subject'        => '组件状态更新',
-                'text'           => 'component :component_name 的状态已经更新。component现在的状态为: component_human_status。\n谢谢, :app_name',
-                'html-preheader' => 'component 更新来自:app_name',
-                'html'           => '<p>component :component_name 已经被变更。component正在component_human_status。</p><p>谢谢, :app_name</p>',
-                'tooltip-title'  => '订阅来自 component_name 的更新',
+                'subject'       => '组件状态更新',
+                'text'          => '组件 :component_name 的状态已经更新。:component_name 现在的状态为 :component_human_status。\n谢谢, :app_name',
+                'html'          => '<p>组件 :component_name 有状态变更。:component_name 当前 :component_human_status。</p><p>谢谢, :app_name</p>',
+                'tooltip-title' => '订阅来自 component_name 的更新',
             ],
         ],
     ],
@@ -109,7 +104,6 @@ return [
         'email' => [
             'invite' => [
                 'text'           => "您已被邀请加入 :app_name 团队的状态页, 请点击以下链接进行注册。\n:link\n谢谢, :app_name",
-                'html-preheader' => '您已被邀请加入 :app_name.',
                 'html'           => '<p>您已被邀请加入 :app_name 团队的状态页, 请点击以下链接进行注册。</p><p><a href=":link">:link</a></p><p>谢谢, :app_name</p>',
             ],
         ],
@@ -140,7 +134,7 @@ return [
 
     // Other
     'home'            => '主屏幕',
-    'description'     => '使用来自 :app 最新的服务更新保持更新。',
+    'description'     => '始终保持对 :app 服务状态的关注。',
     'powered_by'      => '由 <a href="https://cachethq.io" class="links">Cachet</a> 驱动。',
     'about_this_site' => '关于我们',
     'rss-feed'        => 'RSS',

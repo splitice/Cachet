@@ -10,6 +10,7 @@
  */
 
 return [
+
     /*
     |--------------------------------------------------------------------------
     | Dashboard Login Link
@@ -43,4 +44,48 @@ return [
     */
 
    'automatic_localization' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Show Support for Cachet
+    |--------------------------------------------------------------------------
+    |
+    | Whether to show the "Powered by Cachet" text in the footer.
+    |
+    */
+
+    'show_support' => true,
+
+    /*
+     |--------------------------------------------------------------------------
+     | Enable External Dependencies
+     |--------------------------------------------------------------------------
+     |
+     | Whether to disable third-party dependencies.
+     |
+     */
+
+    'enable_external_dependencies' => true,
+
+   /*
+    |--------------------------------------------------------------------------
+    | Show the timezone
+    |--------------------------------------------------------------------------
+    |
+    | Whether to show the status page timezone in the footer.
+    |
+    */
+
+    'show_timezone' => false,
+
+   /*
+    |--------------------------------------------------------------------------
+    | Skip subscriber verifications
+    |--------------------------------------------------------------------------
+    |
+    | Whether to allow skipping of subscriber verifications.
+    |
+    */
+
+    'skip_subscriber_verification' => false,
 ];

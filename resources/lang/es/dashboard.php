@@ -150,7 +150,7 @@ return [
             'title'   => 'Agregar un nuevo subscriptor',
             'success' => 'Subscriptor agregado.',
             'failure' => 'Algo salió mal al agregar el suscriptor, por favor, inténtelo de nuevo.',
-            'help'    => 'Enter each subscriber on a new line.',
+            'help'    => 'Agregue cada subscriptor en una línea nueva.',
         ],
         'edit' => [
             'title'   => 'Actualizar subscriptor',
@@ -219,6 +219,14 @@ return [
             'success' => 'Configuración guardada.',
             'failure' => 'La configuración no se podido guardar.',
         ],
+        'credits' => [
+            'credits'       => 'Créditos',
+            'contributors'  => 'Colaboradores',
+            'license'       => 'Cachet es un proyecto de código libre bajo la licencia BSD-3, liberado por <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Patrocinadores',
+            'backers'       => 'Si desea apoyar futuros desarrollos, ingrese a la campaña de <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a>.',
+            'thank-you'     => 'Gracias a todos y cada uno de los :count colaboradores.',
+        ],
     ],
 
     // Login
@@ -239,6 +247,14 @@ return [
         'notifications' => 'Notificaciones',
         'awesome'       => 'Excelente.',
         'whoops'        => 'Whoops.',
+    ],
+
+    // Widgets
+    'widgets' => [
+        'support'          => 'Apoye Cachet',
+        'support_subtitle' => '¡Visite nuestro proyecto en la página de <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong>!',
+        'news'             => 'Últimas noticias',
+        'news_subtitle'    => 'Obtener las actualizaciones más recientes',
     ],
 
     // Welcome modal

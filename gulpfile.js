@@ -1,8 +1,5 @@
 var elixir = require('laravel-elixir');
 
-elixir.config.production = true;
-elixir.config.sourcemaps = false;
-
 elixir(function (mix) {
     mix
         .sass('app.scss', 'public/dist/css/app.css')
@@ -24,7 +21,7 @@ elixir(function (mix) {
             'node_modules/livestamp/livestamp.js',
             'node_modules/jquery-minicolors/jquery.minicolors.js',
             'node_modules/jquery-serializeobject/jquery.serializeObject.js',
-            'node_modules/Chart.js/dist/Chart.js',
+            'node_modules/chart.js/dist/Chart.js',
             'node_modules/jquery-sparkline/jquery.sparkline.js',
             'node_modules/sweetalert/dist/sweetalert.min.js',
             'resources/assets/js/password-strength.js',
