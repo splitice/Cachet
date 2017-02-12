@@ -117,6 +117,7 @@ class DashboardRoutes
                         'uses' => 'IncidentController@showEditIncidentAction',
                     ]);
                     $router->post('{incident}/edit', 'IncidentController@editIncidentAction');
+					$router->post('{incident}/update', 'IncidentController@createIncidentUpdateAction');
                 });
 
                 $router->group(['as' => 'schedule.', 'prefix' => 'schedule'], function (Registrar $router) {
