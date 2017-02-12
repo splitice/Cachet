@@ -37,33 +37,6 @@ class DashboardRoutes
                     'as'   => 'index',
                     'uses' => 'DashboardController@showDashboard',
                 ]);
-                $router->get('add', [
-                    'as'   => 'add',
-                    'uses' => 'ComponentController@showAddComponent',
-                ]);
-                $router->post('add', 'ComponentController@createComponentAction');
-                $router->get('groups', [
-                    'as'   => 'groups',
-                    'uses' => 'ComponentController@showComponentGroups',
-                ]);
-                $router->get('groups/add', [
-                    'as'   => 'groups.add',
-                    'uses' => 'ComponentController@showAddComponentGroup',
-                ]);
-                $router->get('groups/edit/{component_group}', [
-                    'as'   => 'groups.edit',
-                    'uses' => 'ComponentController@showEditComponentGroup',
-                ]);
-                $router->post('groups/edit/{component_group}', 'ComponentController@updateComponentGroupAction');
-                $router->delete('groups/{component_group}/delete', 'ComponentController@deleteComponentGroupAction');
-                $router->post('groups/add', 'ComponentController@postAddComponentGroup');
-                $router->get('{component}/edit', [
-                    'as'   => 'edit',
-                    'uses' => 'ComponentController@showEditComponent',
-                ]);
-                $router->delete('{component}/delete', 'ComponentController@deleteComponentAction');
-                $router->post('{component}/edit', 'ComponentController@updateComponentAction');
-            });
 
                 $router->group(['as' => 'components.', 'prefix' => 'components'], function (Registrar $router) {
                     $router->get('/', [
