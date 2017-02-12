@@ -36,14 +36,12 @@ class Kernel extends HttpKernel
             'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
             'Illuminate\Session\Middleware\StartSession',
             'Illuminate\View\Middleware\ShareErrorsFromSession',
-            'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken',
-            'Illuminate\Routing\Middleware\SubstituteBindings',
+            'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken'
         ],
         'api' => [
             'Barryvdh\Cors\HandleCors',
             'CachetHQ\Cachet\Http\Middleware\Acceptable',
-            'CachetHQ\Cachet\Http\Middleware\Timezone',
-            'Illuminate\Routing\Middleware\SubstituteBindings',
+            'CachetHQ\Cachet\Http\Middleware\Timezone'
         ],
     ];
 
